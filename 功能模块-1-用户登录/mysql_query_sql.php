@@ -1,34 +1,34 @@
 <?php
-
 /**
  *  版权声明 :  地老天荒科技（北京）有限公司
  *  文件名称 :  mysql_query_sql.php
  *  创 建 者 :  Shi Guang Yu
- *  创建日期 :  2018/06/12
+ *  创建日期 :  2018/06/12 15:10
  *  文件描述 :  数据库表迁移文件，删除/创建模块应用表
- *  历史记录 :  第一次创建文件，暂无历史操作
+ *  历史记录 :  -----------------------
  */
+    $config = [
+        'host'     => '127.0.0.1',   // 数据库地址
+        'port'     => '3306',        // 数据库端口
+        'database' => 'dlth_xm_v1',  // 数据库名称
+        'charset'  => 'utf8',        // 设置字符集
+        'user'     => 'root',        // 用户名称
+        'password' => '',            // 用户密码
 
-	$host     =  '127.0.0.1';   // 数据库地址
-	$port     =  '3306';        // 数据库端口
-	$database =  'dlth_xm_v1';  // 数据库名称
-	$charset  =  'utf8';        // 设置字符集
-	$user     =  'root';        // 用户名称
-	$password =  '';            // 用户密码
+    ];
+
 	$date     =  date('Y-m-d H:i:s',time());
 
-
 	// 连接数据库
+    $server  = 'mysql:host='.$config['host'].';';
 
-    $server  = 'mysql:host='.$host.';';
+    $server .= 'port='.$config['port'].';';
 
-    $server .= 'port='.$port.';';
+    $server .= 'dbname='.$config['database'].';';
 
-    $server .= 'dbname='.$database.';';
+    $server .= 'charset='.$config['charset'].';';
 
-    $server .= 'charset='.$charset.';';
-
-    $pdo = new pdo($server,$user,$password);
+    $pdo = new pdo($server,$config['user'],$config['password']);
 	
 	// 开启事务
 	$pdo->beginTransaction();
