@@ -1,6 +1,6 @@
 <?php
 /**
- *  版权声明 :  地老天荒科技（北京）有限公司
+ *  版权声明 :  地老天荒科技有限公司
  *  文件名称 :  mysql_query_sql.php
  *  创 建 者 :  Shi Guang Yu
  *  创建日期 :  2018/06/12 15:10
@@ -14,7 +14,6 @@
         'charset'  => 'utf8',        // 设置字符集
         'user'     => 'root',        // 用户名称
         'password' => '',            // 用户密码
-
     ];
 
 	$date     =  date('Y-m-d H:i:s',time());
