@@ -26,4 +26,15 @@ Login_Module : 用户登录模块目录
 
 ### 模块使用说明：
 
+### 1、`config.php 配置文件`
+
 *   config.php 配置文件，需要修改对应小程序的 AppID 及 AppSecret(秘钥)
+
+### 2、`login_route_api.php 文件`
+
+*   login_route_api.php 文件，保存到项目 `route` 目录中，路由自动生效。
+
+### 3、`mysql_query_sql.php 可执行文件`
+
+*   mysql_query_sql.php 可执行文件，修改对应数据库名。
+*   打开命令行执行 `php mysql_query_sql.php` 自动生成模块数据表
