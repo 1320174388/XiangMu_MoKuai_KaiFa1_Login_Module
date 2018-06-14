@@ -24,17 +24,24 @@ Login_Module : 用户登录模块目录
 ├─README.md              模块说明文件
 ~~~
 
+<br/>
+
 ### 模块使用说明：
 
-### 1、`config.php 配置文件`
+### `config.php 配置文件，需要修改对应小程序的 AppID 及 AppSecret(秘钥)`
 
-*   config.php 配置文件，需要修改对应小程序的 AppID 及 AppSecret(秘钥)
+### `login_route_api.php 文件，保存到项目 `route` 目录中，路由自动生效。`
 
-### 2、`login_route_api.php 文件`
+### `mysql_query_sql.php 可执行文件，需修改文件配置项目数据库名。`
 
-*   login_route_api.php 文件，保存到项目 `route` 目录中，路由自动生效。
+### `打开命令行执行 `php mysql_query_sql.php` 自动生成模块数据表`
 
-### 3、`mysql_query_sql.php 可执行文件`
+<br/>
 
-*   mysql_query_sql.php 可执行文件，修改对应数据库名。
-*   打开命令行执行 `php mysql_query_sql.php` 自动生成模块数据表
+### 模块接口定义说明：
+
+### `请求方式：POST` 
+
+### `路由地址：/v1/login_init/:code`
+
+### `返回数据：{"errNum":0,"retMsg":"登录成功","retData":{"token":"用户标识"}}`
