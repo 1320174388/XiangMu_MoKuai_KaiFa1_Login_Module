@@ -8,12 +8,16 @@
  *  历史记录 :  -----------------------
  */
     $config = [
-        'host'     => '127.0.0.1',   // 数据库地址
-        'port'     => '3306',        // 数据库端口
-        'database' => 'dlth_xm_v1',  // 数据库名称
-        'charset'  => 'utf8',        // 设置字符集
-        'user'     => 'root',        // 用户名称
-        'password' => '',            // 用户密码
+        'host'      => '127.0.0.1',          // 数据库地址
+        'port'      => '3306',               // 数据库端口
+        'database'  => 'dlth_xm_v1',         // 数据库名称
+        'charset'   => 'utf8',               // 设置字符集
+        'user'      => 'root',               // 用户名称
+        'password'  => '',                   // 用户密码
+    ];
+
+    $table = [
+        'userList' => 'dlth_data_home_users' // 数据表名
     ];
 
 	$date     =  date('Y-m-d H:i:s',time());
@@ -34,13 +38,15 @@
 	
 	try{
 
-	    // 创建 dlth_xm1_home_users 用户身份标识表
-	    $pdo->exec('drop table dlth_xm1_home_users;');
-
+	    // 删除用户身份标识表
+	    $pdo->exec('drop table '.$table['userList'].';');
+        
 	    echo '
-删除 dlth_xm1_home_users 用户身份标识表
-';
-		$pdo->exec('create table dlth_xm1_home_users(
+删除 '.$table['userList'].' 用户身份标识表
+';      
+
+        // 创建用户身份标识表
+		$pdo->exec('create table '.$table['userList'].'(
 			user_id int unsigned primary key auto_increment,
 			user_openid varchar(50) unique,
 			user_token varchar(50) unique,
@@ -48,7 +54,7 @@
 		);');
 
 		echo '
-创建 dlth_xm1_home_users 用户身份标识表
+创建 '.$table['userList'].' 用户身份标识表
 ';
 
 

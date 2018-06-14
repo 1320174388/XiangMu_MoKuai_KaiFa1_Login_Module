@@ -7,11 +7,6 @@
  *  文件描述 :  模块路由地址
  *  历史记录 :  -----------------------
  */
-/**
- * 传值方式：POST
- * 传值参数：[ :v => 版本号 ] [ :code => 用户临时登录凭证 ]
- * 路由功能：执行用户登录路由地址
- */
 Route::post(
     ':v/login_init/:code',
     'login_module/:v.controller.LoginController/loginInit'

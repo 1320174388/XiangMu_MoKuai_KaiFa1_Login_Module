@@ -18,17 +18,15 @@ Login_Module : 用户登录模块目录
 │  │  │  ├─model         模型目录
 │  │  │  └─service       逻辑层目录
 │  │  └─ ...             更多版本目录      
-│  │ common.php          模块函数文件
-│  └─mysql_query_sql.php 可执行文件，创建数据表
+│  └─common.php          模块函数文件
 ├─login_route_api.php    对应模块的路由文件
+├─mysql_query_sql.php    可执行文件，创建数据表
 ├─README.md              模块说明文件
 ~~~
 
 <br/>
 
-## 模块使用说明：
-
-### `用户登录模块，数据库mysql表table字段禁止更改`
+### 模块使用说明：
 
 ### `config.php 配置文件，需要修改对应小程序的 AppID 及 AppSecret(秘钥)`
 
@@ -36,20 +34,14 @@ Login_Module : 用户登录模块目录
 
 ### `mysql_query_sql.php 可执行文件，需修改文件配置项目数据库名。`
 
-### `打开命令行执行命令： php mysql_query_sql.php 自动生成模块数据表`
+### `打开命令行执行 `php mysql_query_sql.php` 自动生成模块数据表`
 
 <br/>
 
-## v1版本接口说明：
+### 模块接口定义说明：
 
-### `1、用户登录接口`
+### `请求方式：POST` 
 
-#### 请求方式：`POST` 
+### `路由地址：/v1/login_init/:code`
 
-#### 路由地址：`/:v/login_init/:code`
-
-#### 返回数据：`{"errNum":0,"retMsg":"登录成功","retData":{"token":"用户标识"}}`
-
-#### 返回数据：`{"errNum":1,"retMsg":"请检查Code是否失效","retData":false}`
-
-#### 返回数据：`{"errNum":1,"retMsg":"错误信息","retData":false}`
+### `返回数据：{"errNum":0,"retMsg":"登录成功","retData":{"token":"用户标识"}}`
