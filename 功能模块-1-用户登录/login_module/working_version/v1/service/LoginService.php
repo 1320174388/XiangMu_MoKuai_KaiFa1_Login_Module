@@ -72,7 +72,6 @@ class LoginService
             // 再次获取用户数据
             $userInfo = (new LoginDao())->loginSelect($openid);
         }
-
         // 获取用户Token标识
         $token = $userInfo['data']->user_token;
         // 返回数据格式

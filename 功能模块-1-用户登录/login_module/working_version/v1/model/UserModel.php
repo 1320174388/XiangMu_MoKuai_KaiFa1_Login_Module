@@ -13,8 +13,15 @@ use think\Model;
 class UserModel extends Model
 {
     // 设置当前模型对应的完整数据表名称
-    protected $table = 'dlth_xm1_home_users';
+    protected $table = '';
 
     // 设置当前模型对应数据表的主键
     protected $pk = 'user_id';
+
+    // 加载配置数据表名
+    public function userInit()
+    {
+        $this->table = config('tableName.UserTable');
+        return $this;
+    }
 }

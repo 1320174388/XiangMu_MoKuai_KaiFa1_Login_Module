@@ -24,13 +24,17 @@ class LoginDao implements LoginInterface
     public function loginSelect($openid)
     {
         // 获取数据库用户信息
-        $userInfo = UserModel::where('user_openid', $openid)->find();
+        $userModel = new UserModel;
+        // 加载配置项表信息
+        $userModel->userInit();
+        // 查询用户信息
+        $user = $userModel->where('user_openid',$openid)->find();
         // 验证数据
-        if(!$userInfo){
+        if(!$user){
             return returnData('empty');
         }
         // 返回数据格式
-        return returnData('success',$userInfo);
+        return returnData('success',$user);
     }
 
     /**
@@ -46,6 +50,8 @@ class LoginDao implements LoginInterface
     {
         // 实例化用户数据模型
         $userModel = new UserModel();
+        // 加载配置项表信息
+        $userModel->userInit();
         // 保存用户openid
         $userModel->user_openid = $openid;
         // 生成用户token身份标识

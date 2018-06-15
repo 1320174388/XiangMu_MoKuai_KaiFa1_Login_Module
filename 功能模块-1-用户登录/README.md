@@ -8,7 +8,8 @@ Login_Module : 用户登录模块目录
 ~~~
 ├─login_module           模块目录
 │  ├─config              配置目录
-│  │  ├─wx_config.php    配置文件
+│  │  ├─tableName.php    数据表配置文件
+│  │  ├─wx_config.php    小程序配置文件
 │  │  └─ ...             更多配置
 │  ├─working_version     工作版本目录
 │  │  ├─v1               版本1目录
@@ -30,11 +31,13 @@ Login_Module : 用户登录模块目录
 
 ### `用户登录模块，数据库mysql表table字段禁止更改`
 
-### `config.php 配置文件，需要修改对应小程序的 AppID 及 AppSecret(秘钥)`
+### `wx_config.php 配置文件，需要修改对应小程序的 AppID 及 AppSecret(秘钥)`
+
+### `tableName.php 配置文件，需要修改对应项目的数据表名`
 
 ### `login_route_api.php 文件，保存到项目 `route` 目录中，路由自动生效。`
 
-### `mysql_query_sql.php 可执行文件，需修改文件配置项目数据库名。`
+### `mysql_query_sql.php 可执行文件，需要修改对应项目的数据库及表名。`
 
 ### `打开命令行执行命令： php mysql_query_sql.php 自动生成模块数据表`
 
