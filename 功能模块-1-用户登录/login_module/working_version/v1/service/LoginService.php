@@ -8,7 +8,7 @@
  *  历史记录 :  -----------------------
  */
 namespace app\login_module\working_version\v1\service;
-use app\login_module\working_version\v1\dao\LoginDao;
+use app\login_module\working_version\v1\dao\RightDao;
 use app\login_module\working_version\v1\library\LoginLibrary;
 
 class LoginService
@@ -59,18 +59,18 @@ class LoginService
         // 获取用户OpenId信息
         $openid = $wxResult['openid'];
         // 查看数据库是否有用户openID
-        $userInfo = (new LoginDao())->loginSelect($openid);
+        $userInfo = (new RightDao())->loginSelect($openid);
 
         // 验证返回数据格式
         if( $userInfo['msg']=='empty' ) {
             // 添加用户openid到数据库
-            $res = (new LoginDao)->loginCreate($openid);
+            $res = (new RightDao)->loginCreate($openid);
             // 验证数据格式
             if($res['msg']=='error'){
                 return returnData('error');
             }
             // 再次获取用户数据
-            $userInfo = (new LoginDao())->loginSelect($openid);
+            $userInfo = (new RightDao())->loginSelect($openid);
         }
         // 获取用户Token标识
         $token = $userInfo['data']->user_token;
