@@ -51,7 +51,7 @@ Login_Module : 用户登录模块目录
 
 #### 请求方式：`POST` 
 
-#### 路由地址：`/:v/login_init/:code`
+#### 路由地址：`/:v/login_module/login_init/:code`
 
 #### 返回数据：`{"errNum":0,"retMsg":"登录成功","retData":{"token":"用户标识"}}`
 
