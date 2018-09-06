@@ -24,4 +24,10 @@ class UserModel extends Model
         $this->table = config('tableName.UserTable');
         return $this;
     }
+
+    // 加载配置数据表名
+    public function initialize()
+    {
+        $this->table = config('tableName.UserTable');
+    }
 }

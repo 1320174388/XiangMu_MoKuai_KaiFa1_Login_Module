@@ -17,7 +17,7 @@
     ];
 
     $table = [
-        'userList' => 'dlth_data_home_users' // 数据表名
+        'userList' => 'data_home_users' // 数据表名
     ];
 
 	$date     =  date('Y-m-d H:i:s',time());
